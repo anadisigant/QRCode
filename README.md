@@ -46,5 +46,3 @@ Por se tratar de um projeto Vanilla puro, a barreira de uso é nula:
 1. Clone o repositório ou baixe a pasta.
 2. Dê um **duplo clique** no arquivo `index.html`.
 3. Navegue! Não é preciso instalar `node_modules`, `pip`, nem rodar nenhum tipo de servidor web para que a aplicação e a biblioteca funcionem no seu computador.
-# QRCode
-# QRCode
