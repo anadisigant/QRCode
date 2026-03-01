@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Segurança de Deploy: Políticas de proteção contra XSS e Iframing da Página -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+    <title>Gerador de QR Code Seguro</title>
+    <meta name="description"
+        content="Gere QR Codes de forma local e segura. Seus dados não são armazenados em servidores externos.">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerador de QR Code</h1>
+            <p>Gere QR Codes permanentes e gratuitos em segundos.</p>
+        </header>
+
+        <main class="card">
+            <div class="input-group">
+                <label for="qr-text">Cole seu link ou digite seu texto aqui</label>
+                <input type="text" id="qr-text" placeholder="https://exemplo.com" autocomplete="off">
+            </div>
+
+            <div class="color-options">
+                <div class="input-group color-input">
+                    <label for="qr-color">Cor do Código</label>
+                    <input type="color" id="qr-color" value="#2b3a20">
+                </div>
+
+                <div class="input-group color-input">
+                    <label for="qr-bg-color">Cor do Fundo</label>
+                    <input type="color" id="qr-bg-color" value="#ffffff">
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="transparent-bg">
+                <label for="transparent-bg">Fundo Transparente</label>
+            </div>
+
+            <button id="generate-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h6v6H4z" />
+                    <path d="M14 4h6v6h-6z" />
+                    <path d="M4 14h6v6H4z" />
+                    <path d="M14 14h6v6h-6z" />
+                </svg>
+                Gerar QR Code
+            </button>
+
+            <div id="qr-result" class="hidden">
+                <div id="qrcode"></div>
+                <div class="action-buttons">
+                    <button id="download-btn" class="secondary-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Baixar Imagem
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Seus dados não são armazenados. O QR Code gerado funciona para sempre sem depender de
+                banco de dados.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
